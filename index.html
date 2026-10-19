@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>The Woodlands Foodie Tracker — free printable</title>
+  <meta name="description" content="A free printable foodie tracker made for The Woodlands. Keep a running log of every restaurant you've tried, make your own tier list, and track what's still on your must-try list." />
+  <meta name="theme-color" content="#F4EAD2" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Woodlands Foodie Tracker — free printable" />
+  <meta property="og:description" content="A free printable for anyone who eats around The Woodlands. Visited log, tier list, must-try column." />
+  <meta property="og:url" content="https://compo-cf.github.io/woodlands-foodie-tracker/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --sky-top:        #F4EAD2;
+      --sky-bot:        #E4D5B8;
+      --surface:        #FFFCF2;
+      --surface-sunk:   #FBF4E0;
+      --text:           #2A3A2E;
+      --text-muted:     #6B7565;
+      --pine:           #2A4034;
+      --pine-dark:      #1F2F26;
+      --gold:           #C9AF86;
+      --accent:         #B04A2A;
+      --stroke:         rgba(38, 58, 48, 0.10);
+      --shadow:         0 1px 2px rgba(38, 58, 48, 0.08), 0 10px 32px rgba(38, 58, 48, 0.10);
+      --radius:         18px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bot) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      line-height: 1.5;
+    }
+
+    main { max-width: 560px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin: 0 0 18px;
+      text-align: center;
+      color: var(--pine-dark);
+    }
+
+    .tagline {
+      font-size: 17px;
+      color: var(--text-muted);
+      text-align: center;
+      margin: 0 auto 40px;
+      max-width: 440px;
+    }
+
+    .preview-placeholder {
+      aspect-ratio: 3 / 4;
+      width: 72%;
+      max-width: 360px;
+      margin: 0 auto 36px;
+      background: var(--surface);
+      border: 1px dashed var(--stroke);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      padding: 20px;
+      text-align: center;
+      line-height: 1.4;
+      box-shadow: var(--shadow);
+    }
+
+    .whats-inside {
+      background: var(--surface);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 24px 24px 20px;
+      margin: 0 0 36px;
+      box-shadow: var(--shadow);
+    }
+    .whats-inside h2 {
+      margin: 0 0 14px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .whats-inside ul { list-style: none; padding: 0; margin: 0; }
+    .whats-inside li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid var(--stroke);
+      font-size: 16px;
+    }
+    .whats-inside li:first-child { border-top: 0; }
+    .whats-inside .mark {
+      width: 24px; height: 24px;
+      flex: 0 0 24px;
+      border-radius: 50%;
+      background: var(--pine);
+      color: var(--sky-top);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .cta {
+      background: var(--surface);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 28px 24px 24px;
+      box-shadow: var(--shadow);
+    }
+    .cta h2 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 6px;
+      color: var(--pine-dark);
+      text-align: center;
+    }
+    .cta p {
+      font-size: 15px;
+      color: var(--text-muted);
+      text-align: center;
+      margin: 0 0 20px;
+    }
+
+    form.subscribe { display: flex; flex-direction: column; gap: 12px; }
+    form.subscribe input[type="email"] {
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      background: var(--surface-sunk);
+      color: var(--text);
+      font-family: inherit;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    form.subscribe input[type="email"]:focus {
+      outline: 2px solid var(--pine);
+      outline-offset: 1px;
+    }
+    form.subscribe button {
+      padding: 15px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 0;
+      border-radius: 12px;
+      background: var(--pine-dark);
+      color: var(--sky-top);
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform 100ms ease, background 120ms ease;
+    }
+    form.subscribe button:hover,
+    form.subscribe button:focus-visible {
+      background: var(--pine);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    form.subscribe button:active { transform: translateY(0); }
+
+    .fine {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .fine a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
+
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    footer a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
+
+    @media (max-width: 420px) {
+      main { padding: 44px 20px 64px; }
+      h1 { font-size: 34px; }
+      .tagline { font-size: 16px; margin-bottom: 32px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      form.subscribe button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">A free printable</p>
+    <h1>The Woodlands Foodie Tracker</h1>
+    <p class="tagline">A little paper companion for every spot you've tried, every tier you'd put them in, and the ones still on your must-try list.</p>
+
+    <div class="preview-placeholder">
+      PDF cover preview drops in here<br />once the Tracker is built.
+    </div>
+
+    <section class="whats-inside">
+      <h2>What's inside</h2>
+      <ul>
+        <li><span class="mark">1</span><span><strong>Visited log</strong> &mdash; a running list with cuisine, area, and notes columns, so you remember why you loved it (or didn't).</span></li>
+        <li><span class="mark">2</span><span><strong>Tier list sheet</strong> &mdash; classic S/A/B/C/F with space to write five restaurants per tier. Fill in by hand on the couch.</span></li>
+        <li><span class="mark">3</span><span><strong>Must-try column</strong> &mdash; the ones you keep hearing about but haven't gotten to yet. Cross off as you go.</span></li>
+        <li><span class="mark">4</span><span><strong>Monthly favorites</strong> &mdash; one page for every month of the year. Great for a &ldquo;best of&rdquo; roundup at the end of the year.</span></li>
+      </ul>
+    </section>
+
+    <section class="cta">
+      <h2>Get the tracker</h2>
+      <p>Drop your email and the PDF lands in your inbox.</p>
+
+      <!-- BEEHIIV_EMBED_START
+           Replace this entire form block with the embed snippet from
+           Beehiiv (Dashboard -> Settings -> Signup Forms -> Embed).
+           The current form is a fallback that POSTs to Beehiiv's
+           v2 subscribe endpoint. Replace REPLACE_WITH_PUB_ID with
+           your Dispatch publication id (from the Beehiiv URL).
+      -->
+      <form class="subscribe"
+            action="https://api.beehiiv.com/v2/publications/REPLACE_WITH_PUB_ID/subscriptions"
+            method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required />
+        <button type="submit">Send me the Tracker</button>
+      </form>
+      <!-- BEEHIIV_EMBED_END -->
+
+      <p class="fine">
+        You'll also get <strong>The Woodlands Dispatch</strong> &mdash; a short monthly-ish email about Woodlands restaurants, trails, lakes, and the apps I build for them. Unsubscribe anytime.
+      </p>
+    </section>
+
+    <footer>
+      Made in The Woodlands by a neighbor.<br />
+      More at <a href="https://compo-cf.github.io/around-the-woodlands/">compo-cf.github.io/around-the-woodlands</a>
+    </footer>
+  </main>
+</body>
+</html>
