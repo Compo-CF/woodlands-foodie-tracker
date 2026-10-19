@@ -74,23 +74,15 @@
       max-width: 440px;
     }
 
-    .preview-placeholder {
-      aspect-ratio: 3 / 4;
+    .cover-preview {
+      display: block;
       width: 72%;
       max-width: 360px;
+      height: auto;
       margin: 0 auto 36px;
-      background: var(--surface);
-      border: 1px dashed var(--stroke);
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 14px;
-      padding: 20px;
-      text-align: center;
-      line-height: 1.4;
       box-shadow: var(--shadow);
+      background: var(--surface);
     }
 
     .whats-inside {
@@ -226,9 +218,10 @@
     <h1>The Woodlands Foodie Tracker</h1>
     <p class="tagline">A little paper companion for every spot you've tried, every tier you'd put them in, and the ones still on your must-try list &mdash; sent to anyone who joins <strong>The Woodlands Dispatch</strong>, a free monthly-ish newsletter about Woodlands restaurants, trails, and lakes.</p>
 
-    <div class="preview-placeholder">
-      PDF cover preview drops in here<br />once the Tracker is built.
-    </div>
+    <img class="cover-preview" src="tracker-cover.png"
+         alt="The Woodlands Foodie Tracker — printable PDF cover"
+         width="720" height="932" />
+
 
     <section class="whats-inside">
       <h2>What's inside</h2>
